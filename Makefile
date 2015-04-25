@@ -1,10 +1,10 @@
 common_headers = data_types.h
 
 myclient: myclient.c $(common_headers)
-	gcc myclient.c -g -o myclient
+	gcc myclient.c --std=c99 -g -o myclient
 
 myserver: myserver.c $(common_headers)
-	gcc myserver.c -g -o myserver
+	gcc myserver.c --std=c99 -g -o myserver
 
 .PHONY: clean all
 

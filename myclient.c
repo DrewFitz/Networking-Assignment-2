@@ -4,6 +4,8 @@
 
 #include <sys/types.h>
 #include <sys/socket.h>
+// the only way to get netdb to include right on netlab is to define this
+#define __USE_POSIX 1
 #include <netdb.h>
 
 #include <arpa/inet.h>
@@ -177,7 +179,7 @@ int main(int argc, char const *argv[]) {
 	int timeouts = 0;
 
 	// needed to check for data with select()
-	struct fd_set fdset;
+	fd_set fdset;
 	struct timeval selecttime;
 
 	// are we entering the teardown state for the first time?
